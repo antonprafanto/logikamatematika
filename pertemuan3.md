@@ -121,10 +121,10 @@ check_logical_equivalence()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Proof] --> B[📋 Setup test cases P,Q]
+    A[🎯 Start Proof] --> B[📋 Setup test cases P Q]
     B --> C[🔄 Loop untuk setiap kombinasi]
-    C --> D[⚡ Hitung P → Q]
-    D --> E[⚡ Hitung ¬P ∨ Q]
+    C --> D[⚡ Hitung P implies Q]
+    D --> E[⚡ Hitung NOT P OR Q]
     E --> F{❓ Apakah hasil sama?}
     F -->|Ya| G[✅ Mark as equivalent]
     F -->|Tidak| H[❌ Mark as not equivalent]
@@ -263,11 +263,11 @@ de_morgan_laws_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start De Morgan Demo] --> B[📜 Law 1: NOT P AND Q equals NOT P OR NOT Q]
-    B --> C[🔄 Test all P,Q combinations]
+    A[🎯 Start De Morgan Demo] --> B[📜 Law 1 NOT P AND Q equals NOT P OR NOT Q]
+    B --> C[🔄 Test all P Q combinations]
     C --> D[⚡ Calculate P AND Q]
     D --> E[🚫 Calculate NOT of P AND Q]
-    E --> F[🚫 Calculate NOT P, NOT Q]
+    E --> F[🚫 Calculate NOT P and NOT Q]
     F --> G[🎯 Calculate NOT P OR NOT Q]
     G --> H{❓ Left equals Right?}
     H -->|Ya| I[✅ Mark equivalent]
@@ -275,7 +275,7 @@ flowchart TD
     I --> K{❓ More combinations?}
     J --> K
     K -->|Ya| C
-    K -->|Tidak| L[📜 Law 2: NOT P OR Q equals NOT P AND NOT Q]
+    K -->|Tidak| L[📜 Law 2 NOT P OR Q equals NOT P AND NOT Q]
     L --> M[🔄 Repeat process for Law 2]
     M --> N[📊 Display conclusions]
     N --> O[✅ End]
@@ -397,8 +397,8 @@ distributive_laws_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Distributive Demo] --> B[📝 Setup propositions P, Q, R]
-    B --> C[📜 Law 1: P AND Q OR R equals P AND Q OR P AND R]
+    A[🎯 Start Distributive Demo] --> B[📝 Setup propositions P Q R]
+    B --> C[📜 Law 1 P AND Q OR R equals P AND Q OR P AND R]
     C --> D[🔄 Loop through all 8 combinations]
     D --> E[⚡ Calculate Q OR R]
     E --> F[⚡ Calculate P AND Q OR R]
@@ -479,17 +479,17 @@ def tautology_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Tautology Demo] --> B[📜 Demo: P OR NOT P]
-    B --> C[🔄 Test P = True]
+    A[🎯 Start Tautology Demo] --> B[📜 Demo P OR NOT P]
+    B --> C[🔄 Test P equals True]
     C --> D[🚫 Calculate NOT P]
     D --> E[🎯 Calculate P OR NOT P]
-    E --> F[📊 Display result for P = True]
-    F --> G[🔄 Test P = False]
+    E --> F[📊 Display result for P equals True]
+    F --> G[🔄 Test P equals False]
     G --> H[🚫 Calculate NOT P]
     H --> I[🎯 Calculate P OR NOT P]
-    I --> J[📊 Display result for P = False]
+    I --> J[📊 Display result for P equals False]
     J --> K[✅ Show always True conclusion]
-    K --> L[💡 Give real-life examples]
+    K --> L[💡 Give real life examples]
     L --> M[✅ End]
     
     style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
@@ -550,15 +550,15 @@ def contradiction_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Contradiction Demo] --> B[📜 Demo: P AND NOT P]
-    B --> C[🔄 Test P = True]
-    C --> D[🚫 Calculate NOT P = False]
+    A[🎯 Start Contradiction Demo] --> B[📜 Demo P AND NOT P]
+    B --> C[🔄 Test P equals True]
+    C --> D[🚫 Calculate NOT P equals False]
     D --> E[🤝 Calculate P AND NOT P]
-    E --> F[📊 Display result for P = True]
-    F --> G[🔄 Test P = False]
-    G --> H[🚫 Calculate NOT P = True]
+    E --> F[📊 Display result for P equals True]
+    F --> G[🔄 Test P equals False]
+    G --> H[🚫 Calculate NOT P equals True]
     H --> I[🤝 Calculate P AND NOT P]
-    I --> J[📊 Display result for P = False]
+    I --> J[📊 Display result for P equals False]
     J --> K[❌ Show always False conclusion]
     K --> L[💡 Give impossible examples]
     L --> M[✅ End]
@@ -621,17 +621,17 @@ def contingency_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Contingency Demo] --> B[📜 Demo: P implies Q]
-    B --> C[📋 Setup test cases P,Q combinations]
+    A[🎯 Start Contingency Demo] --> B[📜 Demo P implies Q]
+    B --> C[📋 Setup test cases P Q combinations]
     C --> D[🔄 Loop through all combinations]
     D --> E[⚡ Calculate P implies Q]
-    E --> F{❓ P=True AND Q=True?}
+    E --> F{❓ P True and Q True?}
     F -->|Ya| G[💬 Janji ditepati]
-    F -->|Tidak| H{❓ P=True AND Q=False?}
+    F -->|Tidak| H{❓ P True and Q False?}
     H -->|Ya| I[💬 Janji dilanggar]
-    H -->|Tidak| J{❓ P=False AND Q=True?}
-    J -->|Ya| K[💬 Tidak janji, hasil bagus]
-    J -->|Tidak| L[💬 Tidak janji, hasil biasa]
+    H -->|Tidak| J{❓ P False and Q True?}
+    J -->|Ya| K[💬 Tidak janji hasil bagus]
+    J -->|Tidak| L[💬 Tidak janji hasil biasa]
     G --> M[📊 Display result with explanation]
     I --> M
     K --> M
@@ -788,11 +788,11 @@ digital_circuit_simulator()
 ```mermaid
 flowchart TD
     A[📥 Input: A, B, C] --> B[⚡ Basic Logic Gates]
-    B --> C[🤝 AND Gate: A ∧ B]
-    B --> D[🎯 OR Gate: A ∨ B]
-    B --> E[🚫 NOT Gate: ¬A]
-    B --> F[🔄 NAND Gate: ¬(A ∧ B)]
-    B --> G[↔️ XOR Gate: A ⊕ B]
+    B --> C[🤝 AND Gate: A AND B]
+    B --> D[🎯 OR Gate: A OR B]
+    B --> E[🚫 NOT Gate: NOT A]
+    B --> F[🔄 NAND Gate: NOT A AND B]
+    B --> G[↔️ XOR Gate: A XOR B]
     
     C --> H[🏗️ Complex Circuit: Full Adder]
     D --> H
@@ -928,16 +928,16 @@ logic_simplifier()
 ```mermaid
 flowchart TD
     A[🎯 Start Logic Simplifier] --> B[📚 Display available rules]
-    B --> C[🔧 Example 1: P AND T]
-    C --> D[🔄 Test P = True, False]
+    B --> C[🔧 Example 1 P AND T]
+    C --> D[🔄 Test P True and False]
     D --> E[⚡ Apply Identity Law]
     E --> F[📊 Show P AND T equals P]
-    F --> G[🔧 Example 2: P OR NOT P]
-    G --> H[🔄 Test P = True, False]
+    F --> G[🔧 Example 2 P OR NOT P]
+    G --> H[🔄 Test P True and False]
     H --> I[⚡ Apply Complement Law]
     I --> J[📊 Show always True tautology]
-    J --> K[🔧 Example 3: NOT P AND Q]
-    K --> L[🔄 Test all P,Q combinations]
+    J --> K[🔧 Example 3 NOT P AND Q]
+    K --> L[🔄 Test all P Q combinations]
     L --> M[⚡ Apply De Morgan Law]
     M --> N[📊 Show equivalence proof]
     N --> O[💡 Explain benefits of simplification]
@@ -1065,9 +1065,9 @@ simplification_challenge()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start Challenge] --> B[🏆 Challenge 1: P AND Q OR P AND NOT Q]
-    B --> C[🔄 Loop P = True, False]
-    C --> D[🔄 Loop Q = True, False]
+    A[🎯 Start Challenge] --> B[🏆 Challenge 1 P AND Q OR P AND NOT Q]
+    B --> C[🔄 Loop P True and False]
+    C --> D[🔄 Loop Q True and False]
     D --> E[⚡ Calculate P AND Q]
     E --> F[⚡ Calculate P AND NOT Q]
     F --> G[⚡ Calculate combined expression]
@@ -1075,8 +1075,8 @@ flowchart TD
     H --> I[📊 Show simplification to P]
     I --> J{❓ More combinations?}
     J -->|Ya| D
-    J -->|Tidak| K[🏆 Challenge 2: NOT NOT P AND NOT Q]
-    K --> L[🔄 Loop all P,Q combinations]
+    J -->|Tidak| K[🏆 Challenge 2 NOT NOT P AND NOT Q]
+    K --> L[🔄 Loop all P Q combinations]
     L --> M[⚡ Calculate NOT P AND NOT Q]
     M --> N[⚡ Apply NOT to result]
     N --> O[🔧 Apply De Morgan Law]
@@ -1204,13 +1204,13 @@ real_world_optimization()
 ```mermaid
 flowchart TD
     A[🎯 Start Real-World Demo] --> B[🏠 Setup Smart Home Scenario]
-    B --> C[📝 Define variables D,W,M,T]
-    C --> D[🔧 Original: D AND T OR W AND T OR M AND T]
+    B --> C[📝 Define variables D W M T]
+    C --> D[🔧 Original D AND T OR W AND T OR M AND T]
     D --> E[📋 Setup test scenarios]
     E --> F[🔄 Loop through scenarios]
     F --> G[⚡ Calculate original expression]
     G --> H[🔧 Apply Distributive Law]
-    H --> I[⚡ Calculate simplified: D OR W OR M AND T]
+    H --> I[⚡ Calculate simplified D OR W OR M AND T]
     I --> J[📊 Compare results]
     J --> K{❓ More scenarios?}
     K -->|Ya| F
