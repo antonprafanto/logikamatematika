@@ -536,6 +536,26 @@ print(result)  # {'full_access': False, 'basic_access': True, 'blocked': False}`
                         </div>
                       ))}
                     </div>
+
+                    {/* Online IDE Recommendation */}
+                    <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Play className="w-4 h-4 text-blue-600" />
+                        <span className="font-semibold text-blue-900">Jalankan Kode Ini:</span>
+                      </div>
+                      <p className="text-blue-800 text-sm">
+                        Copy kode di atas dan jalankan di{' '}
+                        <a 
+                          href="https://www.onlineide.pro" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-mono underline hover:text-blue-600"
+                        >
+                          www.onlineide.pro
+                        </a>
+                        {' '}(pilih Python) untuk melihat hasilnya secara langsung!
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -544,16 +564,42 @@ print(result)  # {'full_access': False, 'basic_access': True, 'blocked': False}`
             {/* Interactive Demo */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">🚀 Coba Sendiri!</h3>
-              <p className="text-gray-300 mb-6">
-                Buka Python interpreter atau online editor seperti repl.it, lalu coba jalankan kode di atas. 
-                Modifikasi kondisi dan lihat bagaimana output berubah!
+              <p className="text-gray-300 mb-4">
+                Untuk menjalankan dan bereksperimen dengan kode Python di atas, gunakan online editor yang mudah diakses:
               </p>
+              <div className="bg-white/20 rounded-lg p-4 mb-6">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Code className="w-5 h-5 text-white" />
+                  <span className="font-semibold text-white">Rekomendasi Platform:</span>
+                </div>
+                <a 
+                  href="https://www.onlineide.pro" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-300 hover:text-blue-100 font-mono text-lg underline"
+                >
+                  www.onlineide.pro
+                </a>
+                <p className="text-gray-300 text-sm mt-2">
+                  ✅ Tidak perlu install Python &nbsp;&nbsp; ✅ Langsung jalan di browser &nbsp;&nbsp; ✅ Gratis dan mudah
+                </p>
+              </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <p className="text-sm font-mono">
                   # Tantangan: Buat fungsi yang mengecek apakah seseorang bisa mengikuti mata kuliah<br/>
                   # Syarat: IPK >= 2.5 AND sudah lulus Matematika Dasar<br/>
                   # Tulis kode Anda di bawah ini...
                 </p>
+              </div>
+              <div className="mt-4 text-gray-300 text-sm">
+                <p><strong>Cara menggunakan:</strong></p>
+                <ol className="list-decimal list-inside space-y-1 mt-2">
+                  <li>Buka www.onlineide.pro di browser</li>
+                  <li>Pilih "Python" sebagai bahasa programming</li>
+                  <li>Copy-paste kode contoh di atas</li>
+                  <li>Klik "Run" untuk melihat hasilnya</li>
+                  <li>Modifikasi kode dan eksperimen dengan nilai-nilai berbeda</li>
+                </ol>
               </div>
             </div>
           </div>

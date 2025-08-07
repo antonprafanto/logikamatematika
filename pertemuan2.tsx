@@ -742,6 +742,7 @@ print(f"Detail: {details2}")`,
                     <li>• Familiar dengan Boolean values (True/False)</li>
                     <li>• Konsep mathematical reasoning dari Pertemuan 1</li>
                     <li>• Basic Python syntax untuk contoh programming</li>
+                    <li>• Akses ke platform online: <a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-100 px-2 py-1 rounded text-blue-700 hover:bg-blue-200 text-sm font-medium">www.onlineide.pro</a> untuk menjalankan kode Python</li>
                   </ul>
                 </div>
               </div>
@@ -886,6 +887,22 @@ print(f"Detail: {details2}")`,
                       </pre>
                     </div>
                     
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="flex-shrink-0">
+                          <span className="text-2xl">💻</span>
+                        </div>
+                        <div>
+                          <p className="text-blue-800 text-sm">
+                            <strong>Testing Code:</strong> Salin kode di atas dan jalankan di platform online untuk hasil eksekusi langsung!
+                          </p>
+                          <a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                            Buka www.onlineide.pro
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
                     <h4 className="font-semibold text-gray-900 mb-3">Penjelasan Step-by-Step:</h4>
                     <div className="space-y-3">
                       {example.explanation.map((point, pointIndex) => (
@@ -916,6 +933,22 @@ print(f"Detail: {details2}")`,
                       # 3. User dapat input compound expression
                     </p>
                   </div>
+                  <div className="bg-blue-600 rounded-lg p-4 mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
+                        <span className="text-2xl">💻</span>
+                      </div>
+                      <div>
+                        <p className="text-white text-sm mb-2">
+                          <strong>Platform Coding Online:</strong><br/>
+                          Gunakan platform ini untuk menjalankan dan menguji kode Python Anda secara online tanpa instalasi!
+                        </p>
+                        <a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
+                          Buka www.onlineide.pro
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3">Tips Pengerjaan:</h4>
@@ -924,6 +957,7 @@ print(f"Detail: {details2}")`,
                     <li>• Test dengan truth table manual terlebih dahulu</li>
                     <li>• Gunakan functions untuk setiap logical operation</li>
                     <li>• Format output yang mudah dibaca</li>
+                    <li>• Copy-paste kode ke <a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">www.onlineide.pro</a> untuk testing</li>
                   </ul>
                 </div>
               </div>
@@ -1206,6 +1240,7 @@ print(f"Detail: {details2}")`,
                 <li>• Weight: 7 marks (21% total)</li>
                 <li>• Focus: Truth tables & Python implementation</li>
                 <li>• Submit: Code + documentation</li>
+                <li>• Platform: <strong><a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white underline">www.onlineide.pro</a></strong> (disarankan)</li>
               </ul>
             </div>
           </div>
