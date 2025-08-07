@@ -76,7 +76,7 @@ for statement, truth_value in statements:
     analisis = adalah_proposisi(statement, truth_value)
     
     print(f"Statement: '{analisis['statement']}'")
-    print(f"Proposisi: {'✅ YA' if analisis['adalah_proposisi'] else '❌ TIDAK'}")
+    print(f"Proposisi: {'[YA]' if analisis['adalah_proposisi'] else '[TIDAK]'}")
     print(f"Alasan: {analisis['alasan']}")
     if analisis['nilai_kebenaran'] is not None:
         print(f"Nilai: {'TRUE' if analisis['nilai_kebenaran'] else 'FALSE'}")
@@ -107,12 +107,12 @@ flowchart TD
 
 | **Kategori** | **Contoh** | **Proposisi?** | **Alasan** |
 |-------------|------------|----------------|------------|
-| **Fakta Matematis** | `5 > 3` | ✅ Ya | Nilai kebenaran jelas (TRUE) |
-| **Pernyataan Program** | `len("Python") == 6` | ✅ Ya | Dapat dievaluasi (TRUE) |
-| **Conditional dengan Variable** | `x < 10` | ❌ Tidak | Tergantung nilai x |
-| **Pertanyaan** | `Apakah array sorted?` | ❌ Tidak | Pertanyaan, bukan pernyataan |
-| **Perintah** | `print("Hello")` | ❌ Tidak | Instruksi, bukan pernyataan |
-| **Expresi Boolean** | `is_valid and is_active` | ✅ Ya | Menghasilkan TRUE/FALSE |
+| **Fakta Matematis** | `5 > 3` | [YA] | Nilai kebenaran jelas (TRUE) |
+| **Pernyataan Program** | `len("Python") == 6` | [YA] | Dapat dievaluasi (TRUE) |
+| **Conditional dengan Variable** | `x < 10` | [TIDAK] | Tergantung nilai x |
+| **Pertanyaan** | `Apakah array sorted?` | [TIDAK] | Pertanyaan, bukan pernyataan |
+| **Perintah** | `print("Hello")` | [TIDAK] | Instruksi, bukan pernyataan |
+| **Expresi Boolean** | `is_valid and is_active` | [YA] | Menghasilkan TRUE/FALSE |
 
 ---
 
@@ -268,11 +268,11 @@ demo_logical_connectives()
 flowchart TD
     A[Input: Dua Proposisi P dan Q] --> B[Pilih Logical Connective]
     
-    B --> C[¬ Negation]
-    B --> D[∧ Conjunction]
-    B --> E[∨ Disjunction] 
-    B --> F[→ Implication]
-    B --> G[↔ Biconditional]
+    B --> C[NOT Negation]
+    B --> D[AND Conjunction]
+    B --> E[OR Disjunction] 
+    B --> F[IMPLIES Implication]
+    B --> G[IFF Biconditional]
     
     C --> C1[Output: NOT P]
     D --> D1[Output: P AND Q]
@@ -425,27 +425,27 @@ def demo_truth_tables():
     generator = TruthTableGenerator()
     
     # 1. Truth Table untuk Negation
-    print("🔹 NEGATION (¬)")
+    print("[NEGASI] NEGATION")
     negation_table = generator.generate_basic_table('¬', 1)
     generator.print_table(negation_table, "Negation Truth Table")
     
     # 2. Truth Table untuk Conjunction
-    print("🔹 CONJUNCTION (∧)")
+    print("[KONJUNGSI] CONJUNCTION")
     conjunction_table = generator.generate_basic_table('∧', 2)
     generator.print_table(conjunction_table, "Conjunction Truth Table")
     
     # 3. Truth Table untuk Disjunction
-    print("🔹 DISJUNCTION (∨)")
+    print("[DISJUNGSI] DISJUNCTION")
     disjunction_table = generator.generate_basic_table('∨', 2)
     generator.print_table(disjunction_table, "Disjunction Truth Table")
     
     # 4. Truth Table untuk Implication
-    print("🔹 IMPLICATION (→)")
+    print("[IMPLIKASI] IMPLICATION")
     implication_table = generator.generate_basic_table('→', 2)
     generator.print_table(implication_table, "Implication Truth Table")
     
     # 5. Truth Table untuk Biconditional
-    print("🔹 BICONDITIONAL (↔)")
+    print("[BIKONDISIONAL] BICONDITIONAL")
     biconditional_table = generator.generate_basic_table('↔', 2)
     generator.print_table(biconditional_table, "Biconditional Truth Table")
     
@@ -456,7 +456,7 @@ def demo_truth_tables():
         right_side = P or Q      # P ∨ Q
         return (not left_side) or right_side  # → operator
     
-    print("🔹 COMPLEX EXPRESSION: (P ∧ Q) → (P ∨ Q)")
+    print("[KOMPLEKS] COMPLEX EXPRESSION: (P AND Q) IMPLIES (P OR Q)")
     complex_table = generator.generate_complex_expression(
         complex_expression, ['P', 'Q']
     )
@@ -485,11 +485,11 @@ flowchart TD
     I --> J[Analisis hasil:<br/>Tautology/Contradiction/Contingency]
     J --> K[Selesai]
     
-    subgraph "Contoh: P ∧ Q"
-        L[P=T, Q=T → T∧T = T]
-        M[P=T, Q=F → T∧F = F]
-        N[P=F, Q=T → F∧T = F]
-        O[P=F, Q=F → F∧F = F]
+    subgraph "Contoh: P AND Q"
+        L[P=T, Q=T menghasilkan T AND T = T]
+        M[P=T, Q=F menghasilkan T AND F = F]
+        N[P=F, Q=T menghasilkan F AND T = F]
+        O[P=F, Q=F menghasilkan F AND F = F]
     end
     
     style A fill:#87CEEB
@@ -515,7 +515,7 @@ def programming_logic_examples():
         """
         return is_logged_in and (has_valid_token or is_session_active)
     
-    print("🔐 Authentication Logic Truth Table")
+    print("[KEAMANAN] Authentication Logic Truth Table")
     print("Formula: is_logged_in ∧ (has_valid_token ∨ is_session_active)")
     print("-" * 70)
     
@@ -530,7 +530,7 @@ def programming_logic_examples():
                 print(f"Logged: {'T' if logged_in else 'F'} | " + 
                       f"Token: {'T' if valid_token else 'F'} | " +
                       f"Session: {'T' if session_active else 'F'} | " +
-                      f"Access: {'✅ GRANTED' if access_granted else '❌ DENIED'}")
+                      f"Access: {'[GRANTED]' if access_granted else '[DENIED]'}")
     
     print("\n" + "="*50)
     
@@ -543,7 +543,7 @@ def programming_logic_examples():
         implication = (not age_valid) or has_premium  # age_valid → has_premium
         return is_active and implication
     
-    print("🗃️ Database Query Condition Truth Table")
+    print("[DATABASE] Database Query Condition Truth Table")
     print("Formula: is_active ∧ (age_valid → has_premium)")
     print("-" * 60)
     
@@ -555,7 +555,7 @@ def programming_logic_examples():
                 print(f"Active: {'T' if is_active else 'F'} | " +
                       f"Age Valid: {'T' if age_valid else 'F'} | " +
                       f"Premium: {'T' if has_premium else 'F'} | " +
-                      f"Include: {'✅ YES' if include_in_result else '❌ NO'}")
+                      f"Include: {'[YES]' if include_in_result else '[NO]'}")
 
 # Jalankan contoh programming logic
 programming_logic_examples()
@@ -566,18 +566,18 @@ programming_logic_examples()
 ```mermaid
 flowchart TD
     A[User Request] --> B{Is Logged In?}
-    B -->|No| C[❌ Access Denied]
+    B -->|No| C[Access Denied]
     B -->|Yes| D{Has Valid Token<br/>OR<br/>Session Active?}
     
     D -->|No| C
-    D -->|Yes| E[✅ Access Granted]
+    D -->|Yes| E[Access Granted]
     
     subgraph "Truth Table Logic"
-        F[logged_in ∧ (valid_token ∨ session_active)]
-        G[T ∧ (T ∨ F) = T ∧ T = T ✅]
-        H[T ∧ (F ∨ T) = T ∧ T = T ✅]
-        I[T ∧ (F ∨ F) = T ∧ F = F ❌]
-        J[F ∧ (any) = F ❌]
+        F[logged_in AND valid_token OR session_active]
+        G[T AND T OR F = T AND T = T ✅]
+        H[T AND F OR T = T AND T = T ✅]
+        I[T AND F OR F = T AND F = F ❌]
+        J[F AND any = F ❌]
     end
     
     style E fill:#90EE90
@@ -623,7 +623,7 @@ class InteractiveTruthTableBuilder:
         Returns:
             dict: Complete analysis results
         """
-        print(f"\n🔧 Building Truth Table for: {expression_name}")
+        print(f"\n[BUILDER] Building Truth Table for: {expression_name}")
         print("=" * 60)
         
         # Generate truth table
@@ -671,7 +671,7 @@ class InteractiveTruthTableBuilder:
         # Analisis hasil
         analysis = self._analyze_truth_table(true_count, false_count, 2**num_vars)
         
-        print("\n📊 ANALYSIS RESULTS:")
+        print("\n[ANALISIS] ANALYSIS RESULTS:")
         print(f"   True results: {true_count}/{2**num_vars}")
         print(f"   False results: {false_count}/{2**num_vars}")
         print(f"   Type: {analysis['type']}")
@@ -713,7 +713,7 @@ class InteractiveTruthTableBuilder:
         expr2 = next((e for e in self.expression_history if e['name'] == expr2_name), None)
         
         if not expr1 or not expr2:
-            print("❌ One or both expressions not found in history")
+            print("[ERROR] One or both expressions not found in history")
             return False
         
         # Compare results
@@ -721,7 +721,7 @@ class InteractiveTruthTableBuilder:
         data2 = expr2['data']
         
         if len(data1) != len(data2):
-            print("❌ Expressions have different number of variables")
+            print("[ERROR] Expressions have different number of variables")
             return False
         
         equivalent = True
@@ -732,7 +732,7 @@ class InteractiveTruthTableBuilder:
         
         print(f"\n🔍 EQUIVALENCE CHECK: {expr1_name} ≡ {expr2_name}")
         print("=" * 50)
-        print(f"Result: {'✅ EQUIVALENT' if equivalent else '❌ NOT EQUIVALENT'}")
+        print(f"Result: {'[EQUIVALENT]' if equivalent else '[NOT EQUIVALENT]'}")
         
         return equivalent
 
@@ -753,7 +753,7 @@ def demo_interactive_builder():
         return (not P) or (not Q)
     
     # Build truth tables
-    print("🧪 TESTING DE MORGAN'S LAW")
+    print("[TESTING] TESTING DE MORGAN'S LAW")
     builder.build_custom_expression("De Morgan Left", de_morgan_left, ['P', 'Q'])
     builder.build_custom_expression("De Morgan Right", de_morgan_right, ['P', 'Q'])
     
@@ -772,7 +772,7 @@ def demo_interactive_builder():
         return (not not_Q) or not_P  # ¬Q → ¬P
     
     print("\n" + "="*60)
-    print("🧪 TESTING IMPLICATION VS CONTRAPOSITIVE")
+    print("[TESTING] TESTING IMPLICATION VS CONTRAPOSITIVE")
     builder.build_custom_expression("P implies Q", implication, ['P', 'Q'])
     builder.build_custom_expression("Contrapositive", contrapositive, ['P', 'Q'])
     
@@ -797,7 +797,7 @@ def demo_interactive_builder():
         return admin_clause and non_admin_clause
     
     print("\n" + "="*60)
-    print("🧪 TESTING COMPLEX ACCESS CONTROL LOGIC")
+    print("[TESTING] TESTING COMPLEX ACCESS CONTROL LOGIC")
     builder.build_custom_expression(
         "Access Control", 
         access_control, 
@@ -828,9 +828,9 @@ flowchart TD
     I --> K{All FALSE?}
     I --> L{Mixed Results?}
     
-    J -->|Yes| M[🏆 TAUTOLOGY<br/>Always Valid]
-    K -->|Yes| N[❌ CONTRADICTION<br/>Always Invalid]
-    L -->|Yes| O[⚖️ CONTINGENCY<br/>Context Dependent]
+    J -->|Yes| M[TAUTOLOGY<br/>Always Valid]
+    K -->|Yes| N[CONTRADICTION<br/>Always Invalid]
+    L -->|Yes| O[CONTINGENCY<br/>Context Dependent]
     
     M --> P[Generate Report]
     N --> P
@@ -913,7 +913,7 @@ class PropositionalLogicQuiz:
     
     def run_quiz(self):
         """Jalankan quiz interaktif"""
-        print("🧠 PROPOSITIONAL LOGIC QUIZ")
+        print("[QUIZ] PROPOSITIONAL LOGIC QUIZ")
         print("=" * 50)
         print("Jawab semua pertanyaan dengan memilih A, B, C, atau D\n")
         
@@ -931,8 +931,8 @@ class PropositionalLogicQuiz:
             
             # Untuk demonstrasi, kita akan show correct answer
             correct_answer = question['correct']
-            print(f"✅ Jawaban yang benar: {correct_answer}")
-            print(f"💡 Penjelasan: {question['explanation']}")
+            print(f"[BENAR] Jawaban yang benar: {correct_answer}")
+            print(f"[INFO] Penjelasan: {question['explanation']}")
             
             # Simulasi scoring
             self.score += 1  # Assume correct untuk demo
@@ -946,25 +946,25 @@ class PropositionalLogicQuiz:
         """Tampilkan hasil quiz"""
         percentage = (self.score / self.total_questions) * 100
         
-        print("🎉 HASIL QUIZ")
+        print("[HASIL] HASIL QUIZ")
         print("=" * 30)
         print(f"Skor: {self.score}/{self.total_questions}")
         print(f"Persentase: {percentage:.1f}%")
         
         if percentage >= 90:
-            grade = "A - Excellent! 🏆"
+            grade = "A - Excellent!"
         elif percentage >= 80:
-            grade = "B - Good! 👍"
+            grade = "B - Good!"
         elif percentage >= 70:
-            grade = "C - Fair 👌"
+            grade = "C - Fair"
         else:
-            grade = "D - Need more practice 📚"
+            grade = "D - Need more practice"
         
         print(f"Grade: {grade}")
         
         # Rekomendasi
         if percentage < 70:
-            print("\n📚 Rekomendasi:")
+            print("\n[INFO] Rekomendasi:")
             print("- Review materi propositional logic")
             print("- Praktik lebih banyak truth tables")
             print("- Pahami logical connectives dengan baik")
@@ -999,10 +999,10 @@ flowchart TD
     K --> M{Score >= 80%?}
     K --> N{Score >= 70%?}
     
-    L -->|Yes| O[Grade A - Excellent! 🏆]
-    M -->|Yes| P[Grade B - Good! 👍]
-    N -->|Yes| Q[Grade C - Fair 👌]
-    N -->|No| R[Grade D - Need Practice 📚]
+    L -->|Yes| O[Grade A - Excellent!]
+    M -->|Yes| P[Grade B - Good!]
+    N -->|Yes| Q[Grade C - Fair]
+    N -->|No| R[Grade D - Need Practice]
     
     O --> S[Show Recommendations]
     P --> S
@@ -1022,11 +1022,11 @@ def logic_puzzle_challenges():
     """
     Collection of logic puzzles untuk menerapkan propositional logic
     """
-    print("🧩 LOGIC PUZZLE CHALLENGES")
+    print("[PUZZLE] LOGIC PUZZLE CHALLENGES")
     print("=" * 60)
     
     # Puzzle 1: The Truthful Villagers
-    print("🏘️ PUZZLE 1: The Truthful Villagers")
+    print("[DESA] PUZZLE 1: The Truthful Villagers")
     print("-" * 40)
     print("""
     Dalam sebuah desa, ada dua tipe penduduk:
@@ -1043,7 +1043,7 @@ def logic_puzzle_challenges():
     
     def solve_villager_puzzle():
         """Solve menggunakan propositional logic"""
-        print("🔍 SOLVING USING PROPOSITIONAL LOGIC:")
+        print("[SOLUSI] SOLVING USING PROPOSITIONAL LOGIC:")
         print()
         
         # Represent sebagai propositions
@@ -1085,7 +1085,7 @@ def logic_puzzle_challenges():
     
     # Puzzle 2: Database Access Control
     print("\n" + "="*60)
-    print("💾 PUZZLE 2: Database Access Control")
+    print("[DATABASE] PUZZLE 2: Database Access Control")
     print("-" * 40)
     print("""
     Sebuah sistem database memiliki aturan akses:
@@ -1119,7 +1119,7 @@ def logic_puzzle_challenges():
         
         return False
     
-    print("🔧 BUILDING ACCESS CONTROL TRUTH TABLE:")
+    print("[KODE] BUILDING ACCESS CONTROL TRUTH TABLE:")
     variables = ['Admin', 'Permission', 'Logged', 'Guest', 'Emergency']
     
     print(f"Variables: {', '.join(variables)}")
@@ -1142,7 +1142,7 @@ def logic_puzzle_challenges():
         access = database_access_logic(admin, perm, logged, guest, emergency)
         
         row_values = [f"{'T' if val else 'F':>10}" for val in [admin, perm, logged, guest, emergency]]
-        row_values.append(f"{'✅ YES' if access else '❌ NO':>10}")
+        row_values.append(f"{'[YES]' if access else '[NO]':>10}")
         
         print(" | ".join(row_values))
 
