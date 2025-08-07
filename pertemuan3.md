@@ -505,7 +505,7 @@ flowchart TD
     style K fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
     style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
     style M fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
-```
+```:
     """
     Demonstrasi tautology: P ∨ ¬P
     """
