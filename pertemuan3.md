@@ -263,19 +263,19 @@ de_morgan_laws_demo()
 
 ```mermaid
 flowchart TD
-    A[🎯 Start De Morgan Demo] --> B[📜 Law 1: ¬(P ∧ Q) ≡ ¬P ∨ ¬Q]
+    A[🎯 Start De Morgan Demo] --> B[📜 Law 1: NOT P AND Q equals NOT P OR NOT Q]
     B --> C[🔄 Test all P,Q combinations]
-    C --> D[⚡ Calculate P ∧ Q]
-    D --> E[🚫 Calculate ¬(P ∧ Q)]
-    E --> F[🚫 Calculate ¬P, ¬Q]
-    F --> G[🎯 Calculate ¬P ∨ ¬Q]
-    G --> H{❓ Left = Right?}
+    C --> D[⚡ Calculate P AND Q]
+    D --> E[🚫 Calculate NOT of P AND Q]
+    E --> F[🚫 Calculate NOT P, NOT Q]
+    F --> G[🎯 Calculate NOT P OR NOT Q]
+    G --> H{❓ Left equals Right?}
     H -->|Ya| I[✅ Mark equivalent]
     H -->|Tidak| J[❌ Mark not equivalent]
     I --> K{❓ More combinations?}
     J --> K
     K -->|Ya| C
-    K -->|Tidak| L[📜 Law 2: ¬(P ∨ Q) ≡ ¬P ∧ ¬Q]
+    K -->|Tidak| L[📜 Law 2: NOT P OR Q equals NOT P AND NOT Q]
     L --> M[🔄 Repeat process for Law 2]
     M --> N[📊 Display conclusions]
     N --> O[✅ End]
@@ -393,6 +393,48 @@ distributive_laws_demo()
 
 **🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
 
+#### 📊 Alur Kerja Distributive Laws
+
+```mermaid
+flowchart TD
+    A[🎯 Start Distributive Demo] --> B[📝 Setup propositions P, Q, R]
+    B --> C[📜 Law 1: P AND Q OR R equals P AND Q OR P AND R]
+    C --> D[🔄 Loop through all 8 combinations]
+    D --> E[⚡ Calculate Q OR R]
+    E --> F[⚡ Calculate P AND Q OR R]
+    F --> G[⚡ Calculate P AND Q]
+    G --> H[⚡ Calculate P AND R]
+    H --> I[⚡ Calculate P AND Q OR P AND R]
+    I --> J{❓ Left equals Right?}
+    J -->|Ya| K[✅ Mark as equivalent]
+    J -->|Tidak| L[❌ Mark as not equivalent]
+    K --> M{❓ More combinations?}
+    L --> M
+    M -->|Ya| D
+    M -->|Tidak| N[📊 Display results]
+    N --> O[💡 Show practical interpretation]
+    O --> P[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style L fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style M fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style N fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style O fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style P fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
 ### 🔁 3. Associative Laws (Hukum Asosiatif)
 
 Urutan pengelompokan tidak mengubah hasil.
@@ -428,7 +470,42 @@ Hasilnya tetap sama: grup belajar dengan 3 orang yang sama!
 
 ```python
 # Contoh Tautology: P ∨ ¬P (Law of Excluded Middle)
-def tautology_demo():
+def tautology_demo()
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
+#### 📊 Alur Kerja Tautology Demo
+
+```mermaid
+flowchart TD
+    A[🎯 Start Tautology Demo] --> B[📜 Demo: P OR NOT P]
+    B --> C[🔄 Test P = True]
+    C --> D[🚫 Calculate NOT P]
+    D --> E[🎯 Calculate P OR NOT P]
+    E --> F[📊 Display result for P = True]
+    F --> G[🔄 Test P = False]
+    G --> H[🚫 Calculate NOT P]
+    H --> I[🎯 Calculate P OR NOT P]
+    I --> J[📊 Display result for P = False]
+    J --> K[✅ Show always True conclusion]
+    K --> L[💡 Give real-life examples]
+    L --> M[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```:
     """
     Demonstrasi tautology: P ∨ ¬P
     """
@@ -464,7 +541,42 @@ tautology_demo()
 
 ```python
 # Contoh Contradiction: P ∧ ¬P
-def contradiction_demo():
+def contradiction_demo()
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
+#### 📊 Alur Kerja Contradiction Demo
+
+```mermaid
+flowchart TD
+    A[🎯 Start Contradiction Demo] --> B[📜 Demo: P AND NOT P]
+    B --> C[🔄 Test P = True]
+    C --> D[🚫 Calculate NOT P = False]
+    D --> E[🤝 Calculate P AND NOT P]
+    E --> F[📊 Display result for P = True]
+    F --> G[🔄 Test P = False]
+    G --> H[🚫 Calculate NOT P = True]
+    H --> I[🤝 Calculate P AND NOT P]
+    I --> J[📊 Display result for P = False]
+    J --> K[❌ Show always False conclusion]
+    K --> L[💡 Give impossible examples]
+    L --> M[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```:
     """
     Demonstrasi contradiction: P ∧ ¬P
     """
@@ -500,7 +612,52 @@ contradiction_demo()
 
 ```python
 # Contoh Contingency: P → Q
-def contingency_demo():
+def contingency_demo()
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
+#### 📊 Alur Kerja Contingency Demo
+
+```mermaid
+flowchart TD
+    A[🎯 Start Contingency Demo] --> B[📜 Demo: P implies Q]
+    B --> C[📋 Setup test cases P,Q combinations]
+    C --> D[🔄 Loop through all combinations]
+    D --> E[⚡ Calculate P implies Q]
+    E --> F{❓ P=True AND Q=True?}
+    F -->|Ya| G[💬 Janji ditepati]
+    F -->|Tidak| H{❓ P=True AND Q=False?}
+    H -->|Ya| I[💬 Janji dilanggar]
+    H -->|Tidak| J{❓ P=False AND Q=True?}
+    J -->|Ya| K[💬 Tidak janji, hasil bagus]
+    J -->|Tidak| L[💬 Tidak janji, hasil biasa]
+    G --> M[📊 Display result with explanation]
+    I --> M
+    K --> M
+    L --> M
+    M --> N{❓ More combinations?}
+    N -->|Ya| D
+    N -->|Tidak| O[💡 Explain contingency concept]
+    O --> P[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style N fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style O fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style P fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```:
     """
     Demonstrasi contingency: P → Q
     """
@@ -766,6 +923,47 @@ logic_simplifier()
 
 **🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
 
+#### 📊 Alur Kerja Logic Simplifier
+
+```mermaid
+flowchart TD
+    A[🎯 Start Logic Simplifier] --> B[📚 Display available rules]
+    B --> C[🔧 Example 1: P AND T]
+    C --> D[🔄 Test P = True, False]
+    D --> E[⚡ Apply Identity Law]
+    E --> F[📊 Show P AND T equals P]
+    F --> G[🔧 Example 2: P OR NOT P]
+    G --> H[🔄 Test P = True, False]
+    H --> I[⚡ Apply Complement Law]
+    I --> J[📊 Show always True tautology]
+    J --> K[🔧 Example 3: NOT P AND Q]
+    K --> L[🔄 Test all P,Q combinations]
+    L --> M[⚡ Apply De Morgan Law]
+    M --> N[📊 Show equivalence proof]
+    N --> O[💡 Explain benefits of simplification]
+    O --> P[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style N fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style O fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style P fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
 ---
 
 ## 🎯 Latihan Interaktif
@@ -863,6 +1061,55 @@ simplification_challenge()
 
 **🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
 
+#### 📊 Alur Kerja Simplification Challenge
+
+```mermaid
+flowchart TD
+    A[🎯 Start Challenge] --> B[🏆 Challenge 1: P AND Q OR P AND NOT Q]
+    B --> C[🔄 Loop P = True, False]
+    C --> D[🔄 Loop Q = True, False]
+    D --> E[⚡ Calculate P AND Q]
+    E --> F[⚡ Calculate P AND NOT Q]
+    F --> G[⚡ Calculate combined expression]
+    G --> H[🔧 Apply Distributive Law]
+    H --> I[📊 Show simplification to P]
+    I --> J{❓ More combinations?}
+    J -->|Ya| D
+    J -->|Tidak| K[🏆 Challenge 2: NOT NOT P AND NOT Q]
+    K --> L[🔄 Loop all P,Q combinations]
+    L --> M[⚡ Calculate NOT P AND NOT Q]
+    M --> N[⚡ Apply NOT to result]
+    N --> O[🔧 Apply De Morgan Law]
+    O --> P[📊 Show simplification to P OR Q]
+    P --> Q{❓ More combinations?}
+    Q -->|Ya| L
+    Q -->|Tidak| R[✅ Display final answers]
+    R --> S[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style N fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style O fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style P fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style Q fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style R fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style S fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
 ### 🧩 Latihan 3: Real-World Logic Optimization
 
 ```python
@@ -948,6 +1195,52 @@ def real_world_optimization():
 
 # Jalankan optimasi
 real_world_optimization()
+```
+
+**🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
+
+#### 📊 Alur Kerja Real-World Optimization
+
+```mermaid
+flowchart TD
+    A[🎯 Start Real-World Demo] --> B[🏠 Setup Smart Home Scenario]
+    B --> C[📝 Define variables D,W,M,T]
+    C --> D[🔧 Original: D AND T OR W AND T OR M AND T]
+    D --> E[📋 Setup test scenarios]
+    E --> F[🔄 Loop through scenarios]
+    F --> G[⚡ Calculate original expression]
+    G --> H[🔧 Apply Distributive Law]
+    H --> I[⚡ Calculate simplified: D OR W OR M AND T]
+    I --> J[📊 Compare results]
+    J --> K{❓ More scenarios?}
+    K -->|Ya| F
+    K -->|Tidak| L[💰 Show benefits of simplification]
+    L --> M[🗄️ Database Query Example]
+    M --> N[📝 Show SQL optimization]
+    N --> O[⚡ Original complex WHERE clause]
+    O --> P[🔧 Apply logical simplification]
+    P --> Q[📝 Show optimized query]
+    Q --> R[✅ End]
+    
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style L fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style M fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style N fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style O fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style P fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style Q fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style R fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+```
 ```
 
 **🚀 Coba jalankan kode di atas di: [www.onlineide.pro](https://www.onlineide.pro)**
