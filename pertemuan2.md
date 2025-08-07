@@ -107,10 +107,10 @@ flowchart TD
     B -->|Ya| C[📤 Output: False]
     B -->|Tidak| D[📤 Output: True]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#ffebee
-    style D fill:#e8f5e8
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style D fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
 ```
 
 ### 🤝 2. Conjunction (AND) - ∧
@@ -166,12 +166,12 @@ flowchart TD
     C -->|Ya| E[📤 Output: True]
     C -->|Tidak| F[📤 Output: False]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#fff3e0
-    style D fill:#ffebee
-    style E fill:#e8f5e8
-    style F fill:#ffebee
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style E fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style F fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
 ```
 
 ### 🎯 3. Disjunction (OR) - ∨
@@ -229,12 +229,12 @@ flowchart TD
     D -->|Ya| E[📤 Output: True]
     D -->|Tidak| F[📤 Output: False]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#e8f5e8
-    style F fill:#ffebee
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style F fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
 ```
 
 ### 🔄 4. Implication (IF-THEN) - →
@@ -292,12 +292,12 @@ flowchart TD
     C -->|Ya| E[📤 Output: True]
     C -->|Tidak| F[📤 Output: False]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#fff3e0
-    style D fill:#e8f5e8
-    style E fill:#e8f5e8
-    style F fill:#ffebee
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style E fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style F fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
 ```
 
 ### ↔️ 5. Biconditional (IF AND ONLY IF) - ↔
@@ -353,10 +353,10 @@ flowchart TD
     B -->|Ya| C[📤 Output: True]
     B -->|Tidak| D[📤 Output: False]
     
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#e8f5e8
-    style D fill:#ffebee
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    style D fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
 ```
 
 ---
@@ -438,8 +438,18 @@ flowchart TD
     K -->|Ya| D
     K -->|Tidak| L[✅ Selesai]
     
-    style A fill:#e1f5fe
-    style L fill:#e8f5e8
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style C fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style E fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style G fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style H fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style I fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style J fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style K fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style L fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
 ```
 
 ---
