@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logika Matematika - Materi Pembelajaran Informatika</title>
+    <meta name="description" content="Platform pembelajaran Logika Matematika untuk mahasiswa informatika dengan pendekatan programming-integrated dan hands-on practice">
+    <meta name="keywords" content="logika matematika, informatika, programming, mathematical reasoning, propositional logic, computer science">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 smooth-scroll">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gray-900 text-white p-2 rounded-lg">
+                        <i data-lucide="brain" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Logika Matematika</h1>
+                        <p class="text-sm text-gray-600">Informatika Learning Platform</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="bg-gray-900 text-white px-3 py-1 rounded-full text-sm font-medium">3 SKS</span>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">16 Pertemuan</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="animate-fade-in">
+                <h2 class="text-5xl font-bold mb-6">
+                    Materi Pembelajaran<br/>
+                    <span class="text-blue-300">Logika Matematika</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    "Kalkulus Ilmu Komputer" - Platform pembelajaran komprehensif dengan pendekatan 
+                    <strong>programming-integrated</strong> untuk mahasiswa informatika
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#pertemuan-list" class="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
+                        <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
+                        Mulai Belajar
+                    </a>
+                    <a href="#course-overview" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors inline-flex items-center">
+                        <i data-lucide="info" class="w-5 h-5 mr-2"></i>
+                        Info Mata Kuliah
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Overview -->
+    <section id="course-overview" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Informasi Mata Kuliah</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Fondasi mathematical reasoning yang essential untuk programming dan computer science lanjutan
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gray-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="calendar" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">3 SKS</h4>
+                    <p class="text-gray-600 text-sm">3 jam tatap muka per minggu</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gray-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Semester 2</h4>
+                    <p class="text-gray-600 text-sm">Mahasiswa informatika pemula</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gray-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="code" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Programming</h4>
+                    <p class="text-gray-600 text-sm">Python implementation</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gray-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Hands-on</h4>
+                    <p class="text-gray-600 text-sm">Interactive learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Tujuan Pembelajaran</h3>
+                <p class="text-xl text-gray-600">Kompetensi yang akan dikuasai mahasiswa</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2">Mathematical Reasoning</h4>
+                            <p class="text-gray-600">Mengembangkan kemampuan berpikir logis terstruktur yang essential untuk programmer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2">Formal Verification</h4>
+                            <p class="text-gray-600">Tools matematis untuk memverifikasi kebenaran program dan algorithm correctness</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2">CS Applications</h4>
+                            <p class="text-gray-600">Aplikasi dalam AI, database, algoritma, dan pengembangan sistem software yang reliable</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2">Industry Readiness</h4>
+                            <p class="text-gray-600">Persiapan untuk high-demand positions seperti Formal Verification Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Phases -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Fase Pembelajaran</h3>
+                <p class="text-xl text-gray-600">Struktur pembelajaran progresif dari dasar hingga aplikasi lanjutan</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-blue-50 rounded-xl p-6 card-hover border-l-4 border-blue-500">
+                    <div class="text-center mb-4">
+                        <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto text-xl font-bold">1</div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Logical Foundations</h4>
+                    <p class="text-gray-600 text-sm mb-3">Weeks 1-4</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Mathematical reasoning</li>
+                        <li>• Propositional logic</li>
+                        <li>• Truth tables</li>
+                        <li>• Basic proof techniques</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 rounded-xl p-6 card-hover border-l-4 border-green-500">
+                    <div class="text-center mb-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto text-xl font-bold">2</div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Proof Mastery</h4>
+                    <p class="text-gray-600 text-sm mb-3">Weeks 5-8</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Direct proofs</li>
+                        <li>• Proof by contradiction</li>
+                        <li>• Mathematical induction</li>
+                        <li>• Set theory fundamentals</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 rounded-xl p-6 card-hover border-l-4 border-purple-500">
+                    <div class="text-center mb-4">
+                        <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto text-xl font-bold">3</div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Discrete Structures</h4>
+                    <p class="text-gray-600 text-sm mb-3">Weeks 9-12</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Functions & relations</li>
+                        <li>• Graph theory basics</li>
+                        <li>• Predicate logic</li>
+                        <li>• Database connections</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 rounded-xl p-6 card-hover border-l-4 border-orange-500">
+                    <div class="text-center mb-4">
+                        <div class="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto text-xl font-bold">4</div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Advanced Integration</h4>
+                    <p class="text-gray-600 text-sm mb-3">Weeks 13-16</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Combinatorics</li>
+                        <li>• Discrete probability</li>
+                        <li>• Algorithm analysis</li>
+                        <li>• Real-world case studies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Materials -->
+    <section id="pertemuan-list" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Materi Pembelajaran Tersedia</h3>
+                <p class="text-xl text-gray-600">Pertemuan 1-5 telah tersedia dengan konten komprehensif</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Pertemuan 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 1</span>
+                        <div class="flex items-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Tersedia</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Pengenalan dan Dasar-dasar</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Orientasi mata kuliah</li>
+                        <li>• Mathematical reasoning</li>
+                        <li>• Logical thinking</li>
+                        <li>• Programming connections</li>
+                        <li>• Diagnostic quiz</li>
+                    </ul>
+                    <a href="pertemuan1.tsx" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                        <span>Buka Materi</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 2</span>
+                        <div class="flex items-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Tersedia</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Propositional Logic Fundamentals</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Proposisi & logical connectives</li>
+                        <li>• Truth tables</li>
+                        <li>• Python implementation</li>
+                        <li>• Boolean operations</li>
+                        <li>• Assignment 1 (7 marks)</li>
+                    </ul>
+                    <a href="pertemuan2.tsx" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                        <span>Buka Materi</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 3</span>
+                        <div class="flex items-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Tersedia</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Logical Equivalences & Simplification</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Laws of logic (De Morgan's)</li>
+                        <li>• Tautologies & contradictions</li>
+                        <li>• Boolean algebra</li>
+                        <li>• Circuit simplification</li>
+                        <li>• Interactive logic gates</li>
+                    </ul>
+                    <a href="pertemuan3.tsx" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                        <span>Buka Materi</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 4</span>
+                        <div class="flex items-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Tersedia</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Introduction to Proofs</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Direct proof techniques</li>
+                        <li>• Programming contexts</li>
+                        <li>• Proof structure & writing</li>
+                        <li>• Mathematical statements</li>
+                        <li>• Quiz 1 (4 marks)</li>
+                    </ul>
+                    <a href="pertemuan4.tsx" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                        <span>Buka Materi</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 5 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 5</span>
+                        <div class="flex items-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Tersedia</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Proof Techniques - Contradiction & Contrapositive</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Proof by contradiction</li>
+                        <li>• Contrapositive proofs</li>
+                        <li>• Algorithm termination</li>
+                        <li>• CS applications</li>
+                        <li>• Assignment 2 (7 marks)</li>
+                    </ul>
+                    <a href="pertemuan5.tsx" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                        <span>Buka Materi</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Coming Soon Card -->
+                <div class="bg-gray-100 rounded-xl p-6 border-2 border-dashed border-gray-300 card-hover opacity-75">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">Pertemuan 6+</span>
+                        <div class="flex items-center text-gray-500">
+                            <i data-lucide="clock" class="w-5 h-5 mr-1"></i>
+                            <span class="text-sm">Coming Soon</span>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-700 mb-3">Materi Selanjutnya</h4>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li>• Mathematical Induction</li>
+                        <li>• Set Theory Foundations</li>
+                        <li>• Functions & Relations</li>
+                        <li>• Graph Theory Basics</li>
+                        <li>• Dan materi lanjutan lainnya...</li>
+                    </ul>
+                    <span class="text-gray-500 font-medium">Segera hadir!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Highlight -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Fitur Pembelajaran</h3>
+                <p class="text-xl text-gray-600">Pengalaman belajar yang interaktif dan praktis</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="code-2" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Programming Integration</h4>
+                    <p class="text-gray-600">Setiap konsep logika dihubungkan dengan implementasi Python konkret. Platform <strong>www.onlineide.pro</strong> untuk hands-on practice.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="brain" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Interactive Learning</h4>
+                    <p class="text-gray-600">Quiz diagnostik, latihan soal dengan feedback, truth table generators, dan contoh aplikasi real-world.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="book-open" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Comprehensive Resources</h4>
+                    <p class="text-gray-600">Glosarium istilah, daftar referensi akademik terverifikasi, dan penjelasan detail untuk setiap konsep yang dipelajari.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Tools -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-4">Tools & Resources</h3>
+                <p class="text-xl text-gray-300">Akses cepat ke tools pembelajaran yang direkomendasikan</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" 
+                   class="bg-blue-600 hover:bg-blue-700 rounded-xl p-6 text-center transition-colors group">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Online IDE</h4>
+                    <p class="text-blue-200 text-sm">Python programming environment untuk menjalankan kode contoh</p>
+                </a>
+                
+                <div class="bg-green-600 rounded-xl p-6 text-center">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="calculator" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Truth Table Generator</h4>
+                    <p class="text-green-200 text-sm">Built-in tool dalam setiap materi untuk evaluasi logika</p>
+                </div>
+                
+                <div class="bg-purple-600 rounded-xl p-6 text-center">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="library" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Reference Library</h4>
+                    <p class="text-purple-200 text-sm">Akses ke sumber akademik terpercaya dan jurnal internasional</p>
+                </div>
+                
+                <div class="bg-orange-600 rounded-xl p-6 text-center">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Glossary</h4>
+                    <p class="text-orange-200 text-sm">Definisi lengkap terminologi dan singkatan penting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Information -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Sistem Penilaian</h3>
+                <p class="text-xl text-gray-600">Distribusi penilaian yang adil dengan focus pada continuous learning</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-sm border">
+                    <h4 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i data-lucide="trending-up" class="w-6 h-6 mr-3 text-blue-600"></i>
+                        Continuous Assessment (60%)
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Assignments (3 tugas)</span>
+                            <span class="font-bold text-blue-600">21%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Surprise Quizzes (7 quiz)</span>
+                            <span class="font-bold text-green-600">28%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Class Participation</span>
+                            <span class="font-bold text-purple-600">10%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Programming Projects</span>
+                            <span class="font-bold text-orange-600">5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-sm border">
+                    <h4 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i data-lucide="clipboard-check" class="w-6 h-6 mr-3 text-red-600"></i>
+                        Major Assessments (40%)
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Midterm Exam 1 (Week 8)</span>
+                            <span class="font-bold text-red-600">12.5%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                            <span class="font-medium text-gray-900">Midterm Exam 2 (Week 12)</span>
+                            <span class="font-bold text-red-600">12.5%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-900 text-white rounded-lg">
+                            <span class="font-medium">Final Exam (Week 16)</span>
+                            <span class="font-bold">15%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <p class="text-sm text-yellow-800">
+                            <strong>Pro Tip:</strong> Sistem penilaian ini mendorong konsistensi belajar. 
+                            Focus pada assignments dan quiz untuk membangun fondasi yang kuat!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-white text-gray-900 p-2 rounded-lg">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xl font-bold">Logika Matematika</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Platform pembelajaran komprehensif untuk mahasiswa informatika dengan 
+                        pendekatan programming-integrated dan hands-on practice.
+                    </p>
+                    <div class="flex space-x-3">
+                        <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">3 SKS</span>
+                        <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">16 Pertemuan</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#course-overview" class="hover:text-white">Info Mata Kuliah</a></li>
+                        <li><a href="#pertemuan-list" class="hover:text-white">Daftar Pertemuan</a></li>
+                        <li><a href="https://www.onlineide.pro" target="_blank" rel="noopener noreferrer" class="hover:text-white">Online IDE</a></li>
+                        <li><a href="#" class="hover:text-white">Sistem Penilaian</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Materi Tersedia</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="pertemuan1.tsx" class="hover:text-white">Pertemuan 1: Pengenalan</a></li>
+                        <li><a href="pertemuan2.tsx" class="hover:text-white">Pertemuan 2: Propositional Logic</a></li>
+                        <li><a href="pertemuan3.tsx" class="hover:text-white">Pertemuan 3: Logical Equivalences</a></li>
+                        <li><a href="pertemuan4.tsx" class="hover:text-white">Pertemuan 4: Introduction to Proofs</a></li>
+                        <li><a href="pertemuan5.tsx" class="hover:text-white">Pertemuan 5: Proof Techniques</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Learning Resources</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>• Programming Integration</li>
+                        <li>• Interactive Quizzes</li>
+                        <li>• Truth Table Generators</li>
+                        <li>• Comprehensive Glossary</li>
+                        <li>• Academic References</li>
+                        <li>• Real-world Applications</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Materi Pembelajaran Logika Matematika - Informatika
+                    </p>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <span>Total Materi: 5/16 Pertemuan</span>
+                        <span>•</span>
+                        <span>Status: Aktif Dikembangkan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll-based animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
