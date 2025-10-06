@@ -1,0 +1,22 @@
+# File internal development - tidak perlu di GitHub untuk pembaca
+generate_chapters.py
+AUDIT_REPORT.md
+DEEP_AUDIT_FINAL.md
+RINGKASAN_PEMBUATAN.md
+SELESAI.md
+CLAUDE.md
+
+# Git files
+.git/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
