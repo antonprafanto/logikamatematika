@@ -6,6 +6,9 @@ RINGKASAN_PEMBUATAN.md
 SELESAI.md
 CLAUDE.md
 
+# Folder sumber (gambar dan analisa) - tidak perlu di GitHub
+sumber/
+
 # Git files
 .git/
 
